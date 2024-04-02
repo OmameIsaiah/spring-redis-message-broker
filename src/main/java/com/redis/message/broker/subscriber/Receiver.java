@@ -36,7 +36,6 @@ public class Receiver implements MessageListener {
                 try {
                     QueueRequest request = Utils.getGson().fromJson(body, QueueRequest.class);
                     log.info("VALUE AFTER CONVERSION: {}", request);
-                    //QueueRequest request = Util.getGson().fromJson(value, QueueRequest.class);
                     log.info("MESSAGE TYPE: {}", request.getType());
                     if (QueueTypes.PRODUCT.equalsIgnoreCase(request.getType())) {
                         String data = objectMapper.writeValueAsString(request.getData());
